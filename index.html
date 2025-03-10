@@ -60,12 +60,7 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("contextmenu", function(event) {
-            event.preventDefault();
-        });
-    </script>
-        
+
     <script>
         function handleCredentialResponse(response) {
             const responsePayload = JSON.parse(atob(response.credential.split('.')[1]));
@@ -172,23 +167,16 @@
             width: 200%; /* Make it occupy full width */
             max-width: 1500px; /* Set a reasonable max width */
             height: 100vh; /* Adjust height to fit screen */
-            overflow: auto; /* Enable scrolling */
             border: none; /* Remove border */
             display: flex;
             justify-content: center; /* Center horizontally */
             lign-items: center; /* Center vertically */
             background-color: transparent; /* Remove any unwanted background */
-            pointer-events: none;
-            user-select: none;
         }
         .pdf-container iframe {
              width: 100%;
             height: 100%;
             border: none;
-        }
-        .pdf-wrapper {
-            pointer-events: none; /* Disables user interactions */
-            user-select: none; /* Prevents selection */
         }
     </style>
 
