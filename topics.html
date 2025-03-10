@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Viewer</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .pdf-container {
-            width: 100%;
-            height: 100vh;
-        }
+    <link rel="stylesheet" href="style.css">
     </style>
 </head>
 <body>
 
-    <iframe class="pdf-container" src="sample.pdf" frameborder="0"></iframe>
+    <div class="container">
+        <!-- Left Sidebar -->
+               <!-- Left Sidebar -->
+               <nav class="sidebar">
+                <ul>
+                    <li><a href="index.html" onclick="loadContent('home.html')">Home</a></li>
+                    <li>
+                        <a href="topics.html" onclick="toggleSubMenu(event)">DSA ▼</a>
+                        <ul class="submenu" id="dsaSubmenu">
+                            <li><a href="#" onclick="loadContent('topics.html')">Topics</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html" onclick="loadContent('students.html')">Our Students</a></li>
+                </ul>
+            </nav>
+
+        <!-- Right Content Section -->
+        <div class="content" id="mainContent">
+            <center><h2>Will update soon....</h2></center>
+
+        </div>
+    </div>
 
 </body>
 </html>

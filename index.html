@@ -13,25 +13,30 @@
         <!-- Left Sidebar -->
         <nav class="sidebar">
             <ul>
-                <li><a href="home.html" onclick="loadContent('home.html')">Home</a></li>
+                <li><a href="index.html" onclick="loadContent('home.html')">Home</a></li>
                 <li>
-                    <a href="topics.html" onclick="toggleSubMenu(event)">DSA ▼</a>
-                    <ul class="submenu" id="dsaSubmenu">
-                        <li><a href="#" onclick="loadContent('topics.html')">Topics</a></li>
+
+                    <ul class="submenu" id="coursesSubmenu">
+                        <li><a href="topics.html" onclick="toggleSubMenu(event, 'dsaSubmenu')">Course▼</a></li>
                     </ul>
-                </li>
-                <li><a href="#" onclick="loadContent('students.html')">Our Students</a></li>
-            </ul>
         </nav>
 
         <!-- Right Content Section -->
         <div class="content" id="mainContent">
             <h2>Welcome to Code With Asma</h2>
-
+            <H3>Asma Shaikh</H3>
+            <h3>SDE III JAVA | Spring Boot | Microservice | DSA | System Design</h3>
+            
+            <a href="https://www.linkedin.com/in/asma-shaikh-411137b1/" target="_blank" rel="noopener noreferrer" class="linkedin-btn">
+                <img src="linkedin.png" alt="LinkedIn Logo" class="linkedin-icon">
+                <span class="linkedin-text">Follow Me on LinkedIn</span>
+            </a>
+            
+            
             <!-- Google Login Button -->
-            <div id="googleSignInContainer">
+            <!--  <div id="googleSignInContainer">
                 <button class="google-login-btn" id="googleSignIn"></button>
-            </div>
+            </div> -->
              
             <!-- Logout Button (Initially Hidden) -->
             <button id="logoutBtn" onclick="logout()" style="display: none;">Logout</button>
@@ -62,7 +67,7 @@
             // Show user info
             document.getElementById('mainContent').innerHTML = `
                 <h2>Welcome, ${responsePayload.name}!</h2>
-                <img src="${responsePayload.picture}" alt="Profile Picture" width="100" style="border-radius: 50%;">
+
                 <p>Email: ${responsePayload.email}</p>
                 <button id="logoutBtn" onclick="logout()">Logout</button>
             `;
@@ -157,12 +162,90 @@
         }
 
         .pdf-container {
-            width: 100%;
-            height: 600px;
+            .pdf-container {
+            width: 200%; /* Make it occupy full width */
+            max-width: 1500px; /* Set a reasonable max width */
+            height: 80vh; /* Adjust height to fit screen */
+            border: none; /* Remove border */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            lign-items: center; /* Center vertically */
+            background-color: transparent; /* Remove any unwanted background */
+        }
+        .pdf-container iframe {
+             width: 100%;
+            height: 100%;
             border: none;
-            overflow: hidden;
         }
     </style>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        color: white;
+        height: 100vh;
+        padding: 20px;
+    }
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+    .sidebar ul li {
+        padding: 10px;
+    }
+    .sidebar a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 10px;
+        background-color: #34495e;
+        border-radius: 5px;
+    }
+    .sidebar a:hover {
+        background-color: #1abc9c;
+    }
+    .submenu {
+        display: none;
+        padding-left: 15px;
+    }
+
+
+    .linkedin-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #0077B5;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 30px;
+        transition: background 0.3s ease-in-out;
+        width: fit-content;
+    }
+
+    .linkedin-text {
+        color: yellow; /* Change this to any color you want */
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .linkedin-btn:hover {
+        background-color: #005582;
+    }
+
+    .linkedin-icon {
+        width: 24px;
+        height: 24px;
+    }
+</style>
+</style>
 
 </body>
 </html>
