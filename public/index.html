@@ -32,9 +32,26 @@
             <div id="googleSignInContainer">
                 <button class="google-login-btn" id="googleSignIn"></button>
             </div>
-
+             
             <!-- Logout Button (Initially Hidden) -->
             <button id="logoutBtn" onclick="logout()" style="display: none;">Logout</button>
+
+            <div class="highlights-container">
+                <!-- Key Highlights Section -->
+                <div class="highlights">
+                    <h2>Key Highlights</h2>
+                    <ol>
+                        <li>Comprehensive Data Structures & Algorithms One to One teaching & mentorship course</li>
+                        <li>Live Sessions plus recorded video</li>
+                        <li>Hands-on Coding Practice with Mocks</li>
+                        <li>Lifetime membership plan</li>
+                        <li>Resume Building & Interview Preparation</li>
+                    </ol>
+                </div>
+                <div class="pdf-container">    
+                    <iframe class="pdf-container" src="Topics.pdf#toolbar=0&toolbar=0"></iframe>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -73,6 +90,13 @@
                 document.getElementById("googleSignIn"),
                 { theme: "filled_blue", size: "large", shape: "pill" }
             );
+        }
+
+        function trackEvent(eventName) {
+            let events = JSON.parse(localStorage.getItem("events")) || [];
+            events.push({ event: eventName, time: new Date().toISOString() });
+            localStorage.setItem("events", JSON.stringify(events));
+            console.log(`Tracked event: ${eventName}`);
         }
 
         window.onload = function () {
@@ -121,6 +145,22 @@
 
         #logoutBtn:hover {
             background-color: #cc0000;
+        }
+
+        .highlights-container {
+            margin-top: 20px;
+        }
+
+        .highlights ol li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 600px;
+            border: none;
+            overflow: hidden;
         }
     </style>
 
