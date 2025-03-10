@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - DSA Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById("mainContent").innerHTML = html;
+                })
+                .catch(error => console.error("Error loading page:", error));
+        }
+
+        function toggleSubMenu(event) {
+            event.preventDefault();
+            let submenu = document.getElementById("dsaSubmenu");
+            submenu.style.display = (submenu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" onclick="loadContent('home.html')">Home</a></li>
+                <li>
+                    <a href="#" onclick="toggleSubMenu(event)">DSA ▼</a>
+                    <ul class="submenu" id="dsaSubmenu">
+                        <li><a href="#" onclick="loadContent('topics.html')">Topics</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="loadContent('students.html')">Our Students</a></li>
+            </ul>
+        </nav>
+        <!-- Right Content Section -->
+        <div class="content" id="mainContent">
+            <!-- Top Images Section -->
+            <div class="image-gallery">
+                <img src="dsa.jpg" alt="DSA Learning">
+            </div>
+    
+            <!-- Key Highlights Section -->
+            <div class="highlights">
+                <h2>Key Highlights</h2>
+                <ul>
+                    <li>Comprehensive Data Structures & Algorithms Course</li>
+                    <li>Hands-on Coding Practice with Real-World Problems</li>
+                    <li>Live Sessions and Expert Mentorship</li>
+                    <li>Community Support & Peer Learning</li>
+                    <li>Resume Building & Interview Preparation</li>
+                </ul>
+            </div>
+    
+            <!-- YouTube Video Section -->
+            <div class="video-section">
+                <h2>Watch Our Latest DSA Video</h2>
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
